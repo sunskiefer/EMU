@@ -5,6 +5,8 @@
 #define TR909_PAUSE() _mm_pause()
 #elif defined(__aarch64__) || defined(_M_ARM64)
 #define TR909_PAUSE() __asm__ __volatile__("yield")
+#elif defined(__arm__)
+#define TR909_PAUSE() __asm__ __volatile__("yield") /* ARMv7 (local change) */
 #else
 #define TR909_PAUSE() ((void)0)
 #endif

@@ -1,0 +1,649 @@
+{
+ "name": "909MPC",
+ "params": [
+  {
+   "key": "accent",
+   "name": "TOTAL ACCENT",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "bd_tune",
+   "name": "BD TUNE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "bd_level",
+   "name": "BD LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "bd_attack",
+   "name": "BD ATTACK",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "bd_decay",
+   "name": "BD DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "sd_tune",
+   "name": "SD TUNE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "sd_level",
+   "name": "SD LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "sd_tone",
+   "name": "SD TONE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "sd_snappy",
+   "name": "SD SNAPPY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "lt_tune",
+   "name": "LT TUNE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "lt_level",
+   "name": "LT LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "lt_decay",
+   "name": "LT DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "mt_tune",
+   "name": "MT TUNE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "mt_level",
+   "name": "MT LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "mt_decay",
+   "name": "MT DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "ht_tune",
+   "name": "HT TUNE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "ht_level",
+   "name": "HT LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "ht_decay",
+   "name": "HT DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "rs_level",
+   "name": "RS LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "hc_level",
+   "name": "HC LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "hh_level",
+   "name": "HH LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "ch_decay",
+   "name": "CH DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "oh_decay",
+   "name": "OH DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "cr_level",
+   "name": "CRASH LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "rd_level",
+   "name": "RIDE LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "cr_tune",
+   "name": "CRASH TUNE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "rd_tune",
+   "name": "RIDE TUNE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "tempo",
+   "name": "TEMPO",
+   "min": 0,
+   "max": 10,
+   "default": 3.3
+  },
+  {
+   "key": "volume",
+   "name": "VOLUME",
+   "min": 0,
+   "max": 10,
+   "default": 7
+  },
+  {
+   "key": "k_start",
+   "name": "START",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_stopcont",
+   "name": "STOP/CONT",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_trk1",
+   "name": "TRACK PLAY 1",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_trk2",
+   "name": "TRACK PLAY 2",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_trk3",
+   "name": "TRACK PLAY 3",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_trk4",
+   "name": "TRACK PLAY 4",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_pat1",
+   "name": "PATTERN PLAY 1",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_pat2",
+   "name": "PATTERN PLAY 2",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_pat3",
+   "name": "PATTERN PLAY 3",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_ext",
+   "name": "EXT INST",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_tempo",
+   "name": "TEMPO/STEP",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_back",
+   "name": "BACK/TAP",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_fwd",
+   "name": "FWD",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_meas",
+   "name": "AVAILABLE MEAS",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_cycle",
+   "name": "CYCLE/GUIDE",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_tape",
+   "name": "TAPE SYNC",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_enter",
+   "name": "CARTRIDGE/ENTER",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_last",
+   "name": "LAST STEP",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_scale",
+   "name": "SCALE",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_shuffle",
+   "name": "SHUFFLE/FLAM",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_clear",
+   "name": "CLEAR",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_inst",
+   "name": "INSTRUMENT SELECT",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_shift",
+   "name": "SHIFT",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step1",
+   "name": "STEP 1",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step2",
+   "name": "STEP 2",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step3",
+   "name": "STEP 3",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step4",
+   "name": "STEP 4",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step5",
+   "name": "STEP 5",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step6",
+   "name": "STEP 6",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step7",
+   "name": "STEP 7",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step8",
+   "name": "STEP 8",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step9",
+   "name": "STEP 9",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step10",
+   "name": "STEP 10",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step11",
+   "name": "STEP 11",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step12",
+   "name": "STEP 12",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step13",
+   "name": "STEP 13",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step14",
+   "name": "STEP 14",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step15",
+   "name": "STEP 15",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step16",
+   "name": "STEP 16",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "brand",
+   "name": "BRAND",
+   "min": 0,
+   "max": 1,
+   "type": "readout",
+   "display": "string"
+  },
+  {
+   "key": "info",
+   "name": "INFO",
+   "min": 0,
+   "max": 1,
+   "type": "readout",
+   "display": "string"
+  },
+  {
+   "key": "status",
+   "name": "STATUS",
+   "min": 0,
+   "max": 1,
+   "type": "readout",
+   "display": "string"
+  },
+  {
+   "key": "ql1",
+   "name": "Q-Link 1",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql2",
+   "name": "Q-Link 2",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql3",
+   "name": "Q-Link 3",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql4",
+   "name": "Q-Link 4",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql5",
+   "name": "Q-Link 5",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql6",
+   "name": "Q-Link 6",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql7",
+   "name": "Q-Link 7",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql8",
+   "name": "Q-Link 8",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql9",
+   "name": "Q-Link 9",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql10",
+   "name": "Q-Link 10",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql11",
+   "name": "Q-Link 11",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql12",
+   "name": "Q-Link 12",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql13",
+   "name": "Q-Link 13",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql14",
+   "name": "Q-Link 14",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql15",
+   "name": "Q-Link 15",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql16",
+   "name": "Q-Link 16",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  }
+ ]
+}

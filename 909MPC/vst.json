@@ -1,0 +1,25 @@
+{
+  "name": "909MPC",
+  "vendor": "L'Cronx",
+  "uid": "E909",
+  "version": 1000,
+  "so": "909mpc.so",
+  "params": "params.json",
+  "layout": "layout.conf",
+  "cc": false,
+  "nrpn": false,
+  "defines": { "MODULE_SUBDIR": "\"roms\"" },
+  "build": {
+    "root": "..",
+    "sources": [
+      "vendor/lemus/tr909/core/circuit.cpp", "vendor/lemus/tr909/core/oversampler.cpp", "vendor/lemus/tr909/core/machine.cpp",
+      "vendor/lemus/tr909/core/factory.cpp", "vendor/lemus/tr909/core/voiceboard.cpp", "vendor/lemus/tr909/core/noise.cpp",
+      "vendor/lemus/tr909/core/cymbals.cpp", "vendor/lemus/tr909/core/hihat.cpp", "vendor/lemus/tr909/core/parallel.cpp",
+      "vendor/lemus/tr909/core/upd7810/upd7810.cpp", "vendor/lemus/tr909/core/upd7810/upd7810_opcodes.cpp", "vendor/lemus/tr909/core/upd7810/upd7810_table.cpp",
+      "909MPC/engine/tr909_engine.cpp"
+    ],
+    "cflags": ["-Icommon", "-I909MPC/build/inc", "-Ivendor/lemus/tr909/core", "-I909MPC", "-DEMU_ONEPAGE"],
+    "libs": ["-lm"]
+  },
+  "targets": ["armv7"]
+}

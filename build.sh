@@ -10,6 +10,7 @@ MPC_VST="${MPC_VST:-$PWD/../mpc-vst-plugins}"
 ZIG="${ZIG:-python3 -m ziglang}"
 cd "$PLUGIN"
 python3 ../tools/gen_emu.py spec.py
+[ -x prebuild.sh ] && ./prebuild.sh   # e.g. the 808/909 netlist header
 mkdir -p build/host build/arm
 [ -x build/host/shadow_art ] || gcc -O2 -w -I"$MPC_VST/tools/vendor/force-shadow/tools" -x c -o build/host/shadow_art "$MPC_VST/tools/shadow_art.c" -lm
 rm -rf build/skin

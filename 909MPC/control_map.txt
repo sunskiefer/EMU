@@ -1,0 +1,72 @@
+id	type	key	label	x(layout)	y(layout)	touch box
+1	knob	accent	TOTAL ACCENT	147	217	r=16
+2	knob	bd_tune	BD TUNE	233	160	r=16
+3	knob	bd_level	BD LEVEL	291	160	r=16
+4	knob	bd_attack	BD ATTACK	233	217	r=16
+5	knob	bd_decay	BD DECAY	292	217	r=16
+6	knob	sd_tune	SD TUNE	362	160	r=16
+7	knob	sd_level	SD LEVEL	420	160	r=16
+8	knob	sd_tone	SD TONE	362	217	r=16
+9	knob	sd_snappy	SD SNAPPY	422	217	r=16
+10	knob	lt_tune	LT TUNE	492	160	r=16
+11	knob	lt_level	LT LEVEL	551	160	r=16
+12	knob	lt_decay	LT DECAY	493	217	r=16
+13	knob	mt_tune	MT TUNE	623	160	r=16
+14	knob	mt_level	MT LEVEL	681	160	r=16
+15	knob	mt_decay	MT DECAY	623	217	r=16
+16	knob	ht_tune	HT TUNE	752	160	r=16
+17	knob	ht_level	HT LEVEL	810	160	r=16
+18	knob	ht_decay	HT DECAY	752	217	r=16
+19	knob	rs_level	RS LEVEL	880	160	r=16
+20	knob	hc_level	HC LEVEL	940	160	r=16
+21	knob	hh_level	HH LEVEL	1071	160	r=16
+22	knob	ch_decay	CH DECAY	1011	217	r=16
+23	knob	oh_decay	OH DECAY	1071	217	r=16
+24	knob	cr_level	CRASH LEVEL	1141	160	r=16
+25	knob	rd_level	RIDE LEVEL	1201	160	r=16
+26	knob	cr_tune	CRASH TUNE	1142	217	r=16
+27	knob	rd_tune	RIDE TUNE	1202	217	r=16
+28	knob	tempo	TEMPO	449	325	r=30
+29	knob	volume	VOLUME	1198	325	r=30
+30	button	k_start	START	140	327	62x62
+31	button	k_stopcont	STOP/CONT	211	327	62x62
+32	button	k_trk1	TRACK PLAY 1	544	312	44x46
+33	button	k_trk2	TRACK PLAY 2	578	312	44x46
+34	button	k_trk3	TRACK PLAY 3	613	312	44x46
+35	button	k_trk4	TRACK PLAY 4	647	312	44x46
+36	button	k_pat1	PATTERN PLAY 1	697	312	44x46
+37	button	k_pat2	PATTERN PLAY 2	731	312	44x46
+38	button	k_pat3	PATTERN PLAY 3	765	312	44x46
+39	button	k_ext	EXT INST	798	312	44x46
+40	button	k_tempo	TEMPO/STEP	848	312	44x46
+41	button	k_back	BACK/TAP	883	312	44x46
+42	button	k_fwd	FWD	917	312	44x46
+43	button	k_meas	AVAILABLE MEAS	950	312	44x46
+44	button	k_cycle	CYCLE/GUIDE	990	312	44x46
+45	button	k_tape	TAPE SYNC	1024	312	44x46
+46	button	k_enter	CARTRIDGE/ENTER	1088	327	62x62
+47	button	k_last	LAST STEP	126	406	50x50
+48	button	k_scale	SCALE	168	406	50x50
+49	button	k_shuffle	SHUFFLE/FLAM	126	458	50x50
+50	button	k_clear	CLEAR	168	458	50x50
+51	button	k_inst	INSTRUMENT SELECT	126	507	50x50
+52	button	k_shift	SHIFT	168	507	50x50
+53	button	k_step1	STEP 1	230	506	56x66
+54	button	k_step2	STEP 2	295	506	56x66
+55	button	k_step3	STEP 3	359	506	56x66
+56	button	k_step4	STEP 4	425	506	56x66
+57	button	k_step5	STEP 5	490	506	56x66
+58	button	k_step6	STEP 6	554	506	56x66
+59	button	k_step7	STEP 7	620	506	56x66
+60	button	k_step8	STEP 8	685	506	56x66
+61	button	k_step9	STEP 9	749	506	56x66
+62	button	k_step10	STEP 10	815	506	56x66
+63	button	k_step11	STEP 11	880	506	56x66
+64	button	k_step12	STEP 12	944	506	56x66
+65	button	k_step13	STEP 13	1008	506	56x66
+66	button	k_step14	STEP 14	1074	506	56x66
+67	button	k_step15	STEP 15	1139	506	56x66
+68	button	k_step16	STEP 16	1205	506	56x66
+69	readout	brand		190	684	w=300 h=56
+70	readout	info		640	684	w=560 h=56
+71	readout	status		1110	684	w=340 h=56

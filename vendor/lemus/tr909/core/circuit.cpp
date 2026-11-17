@@ -2,7 +2,7 @@
 
 #if defined(__aarch64__) || defined(_M_ARM64)
 #include <arm_neon.h>
-#else
+#elif defined(__x86_64__) || defined(_M_X64) || defined(__i386__)
 #include <emmintrin.h>
 #endif
 
@@ -189,13 +189,23 @@ using Pair = float64x2_t;
 [[gnu::always_inline]] inline Pair pairMsub(Pair s, Pair a, Pair x) { return vfmsq_f64(s, a, x); }
 [[gnu::always_inline]] inline double madd(double s, double a, double x) { return __builtin_fma(a, x, s); }
 [[gnu::always_inline]] inline double msub(double s, double a, double x) { return __builtin_fma(-a, x, s); }
-#else
+#elif defined(__x86_64__) || defined(_M_X64) || defined(__i386__)
 using Pair = __m128d;
 [[gnu::always_inline]] inline Pair pairLoad(const double *p) { return _mm_loadu_pd(p); }
 [[gnu::always_inline]] inline void pairStore(double *p, Pair v) { _mm_storeu_pd(p, v); }
 [[gnu::always_inline]] inline Pair pairDup(double x) { return _mm_set1_pd(x); }
 [[gnu::always_inline]] inline Pair pairMadd(Pair s, Pair a, Pair x) { return _mm_add_pd(s, _mm_mul_pd(a, x)); }
 [[gnu::always_inline]] inline Pair pairMsub(Pair s, Pair a, Pair x) { return _mm_sub_pd(s, _mm_mul_pd(a, x)); }
+[[gnu::always_inline]] inline double madd(double s, double a, double x) { return s + a * x; }
+[[gnu::always_inline]] inline double msub(double s, double a, double x) { return s - a * x; }
+#else
+// ARMv7 and others without double-precision SIMD (local change, see vendor/lemus/VENDORED.md): two scalar doubles.
+struct Pair { double v0, v1; };
+[[gnu::always_inline]] inline Pair pairLoad(const double *p) { return Pair{p[0], p[1]}; }
+[[gnu::always_inline]] inline void pairStore(double *p, Pair v) { p[0] = v.v0; p[1] = v.v1; }
+[[gnu::always_inline]] inline Pair pairDup(double x) { return Pair{x, x}; }
+[[gnu::always_inline]] inline Pair pairMadd(Pair s, Pair a, Pair x) { return Pair{s.v0 + a.v0 * x.v0, s.v1 + a.v1 * x.v1}; }
+[[gnu::always_inline]] inline Pair pairMsub(Pair s, Pair a, Pair x) { return Pair{s.v0 - a.v0 * x.v0, s.v1 - a.v1 * x.v1}; }
 [[gnu::always_inline]] inline double madd(double s, double a, double x) { return s + a * x; }
 [[gnu::always_inline]] inline double msub(double s, double a, double x) { return s - a * x; }
 #endif
