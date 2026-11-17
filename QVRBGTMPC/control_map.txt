@@ -1,0 +1,24 @@
+id	type	key	label	x(layout)	y(layout)	touch box
+1	knob	input	INPUT	945	236	r=59
+2	knob	output	OUTPUT	1110	236	r=59
+3	button	k_program	PROGRAM	173	416	130x88
+4	button	k_eq	EQ	310	416	130x88
+5	button	k_preamp	PRE-AMP	447	416	130x88
+6	button	k_pitch	PITCH	584	416	130x88
+7	button	k_delay	DELAY	721	416	130x88
+8	button	k_reverb	REVERB	858	416	130x88
+9	button	k_mix	MIX	995	416	130x88
+10	button	k_config	CONFIG	1132	416	130x88
+11	button	k_valdn	VALUE -	173	536	130x88
+12	button	k_valup	VALUE +	310	536	130x88
+13	button	k_pgdn	PAGE -	447	536	130x88
+14	button	k_pgup	PAGE +	584	536	130x88
+15	button	k_store	STORE	721	536	130x88
+16	button	k_namemod	NAME/MOD	858	536	130x88
+17	button	k_midi	MIDI	995	536	130x88
+18	button	k_bypass	BYPASS	1132	536	130x88
+19	readout	lcd1		460	196	w=680 h=70
+20	readout	lcd2		460	276	w=680 h=70
+21	readout	brand		190	684	w=300 h=56
+22	readout	info		640	684	w=560 h=56
+23	readout	status		1110	684	w=340 h=56

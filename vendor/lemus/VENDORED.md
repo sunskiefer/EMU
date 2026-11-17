@@ -17,3 +17,5 @@ being emulated. No firmware ROMs are included: you supply your own (see the READ
 - `tr808/core/parallel.cpp`, `tr909/core/parallel.cpp`: the spin-wait pause is the ARM `yield` instruction on 32-bit ARM.
 - `core/netlists.h` is not vendored (Lemus generates it from `core/netlists/*.cir` at build time): `tools/gen_netlists.py` writes it, and an include
   shim, into `<plugin>/build/inc/` (called from the plugin's `prebuild.sh`).
+
+- qvgt/core/circuit.cpp: same ARMv7 scalar `Pair` fallback as tr909/tr808 (x86 include guarded); netlists via tools/gen_netlists.py qvgt (QVRBGTMPC/prebuild.sh).

@@ -1,0 +1,40 @@
+{
+  "name": "QVRBGT MPC",
+  "vendor": "L'Cronx",
+  "uid": "EQVG",
+  "version": 1000,
+  "so": "qvrbgtmpc.so",
+  "params": "params.json",
+  "layout": "layout.conf",
+  "cc": false,
+  "nrpn": false,
+  "defines": {
+    "MODULE_SUBDIR": "\"roms\""
+  },
+  "build": {
+    "root": "..",
+    "sources": [
+      "vendor/lemus/qvgt/core/board.cpp",
+      "vendor/lemus/qvgt/core/circuit.cpp",
+      "vendor/lemus/qvgt/core/dasp24.cpp",
+      "vendor/lemus/qvgt/core/i8031.cpp",
+      "vendor/lemus/qvgt/core/preamp.cpp",
+      "vendor/lemus/qvgt/core/unit.cpp",
+      "QVRBGTMPC/engine/qvgt_engine.cpp"
+    ],
+    "cflags": [
+      "-Icommon",
+      "-IQVRBGTMPC/build/inc",
+      "-Ivendor/lemus/qvgt/core",
+      "-IQVRBGTMPC",
+      "-DEMU_ONEPAGE"
+    ],
+    "libs": [
+      "-lm"
+    ]
+  },
+  "targets": [
+    "armv7"
+  ],
+  "effect": true
+}
