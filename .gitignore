@@ -4,3 +4,4 @@
 */build/package/
 */build/arm/
 */build/*.so
+__pycache__/

@@ -12,6 +12,7 @@
 The art itself is never redrawn: every knob frame and the background are the supplied pixels.
 """
 import json, os, re, runpy, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, cv2
 from PIL import Image
 
@@ -116,6 +117,9 @@ for c in S["controls"]:
     for f in range(N):
         v = f / (N - 1)
         ang = lerp_table(c["angles"], v) if "angles" in c else c.get("a0", -145.0) + (c.get("a1", 145.0) - c.get("a0", -145.0)) * v
+        if c.get("lit"):                                   # rendered knob: light fixed from above, only the knob's parts turn
+            from knob_lit import frame as _lit
+            out[f * sw:(f + 1) * sw] = _lit([x / 255.0 for x in c["lit"]], ang, sw); continue
         M = cv2.getRotationMatrix2D((cx0, cy0), -(ang - base_ang), sc)          # CW delta, source -> skin scale
         M[0, 2] += sw / 2 - cx0; M[1, 2] += sw / 2 - cy0
         fr = cv2.warpAffine(art, M, (sw, sw), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)

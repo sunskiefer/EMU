@@ -94,6 +94,9 @@ for c in C:
     if k == "toggle" and ONE: parts += ["ns=0"]
     if k == "button": parts += ["bw=%d" % c.get("bw", 130)] + (["bh=%d" % c["bh"]] if "bh" in c else [])
     if k == "readout" and c.get("tsize"): parts += ["tsize=%d" % c["tsize"], "talign=%s" % c.get("talign", "center")]
+    if k == "readout" and c.get("tsize"):
+        for _k in ("tcolor", "tfont", "tweight"):
+            if c.get(_k): parts.append("%s=%s" % (_k, c[_k]))
     if k in ("enum_h", "enum_v"): parts.append('options="%s"' % ",".join(o.upper() for o in c["options"]))
     if not ONE: parts.append("when=view:%d" % pg)
     L.append(" ".join(parts))
