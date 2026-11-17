@@ -7,10 +7,10 @@ ported by L'Cronx. All the emulation work is the Lemus authors'; this repo only 
 | Plugin | Emulates | Kind | Status |
 |---|---|---|---|
 | 303MPC | Roland TB-303 | synth | one-page skin + engine built; ARM binary compiles; **not yet tested on a Force** |
-| SHMPC | Roland SH-101 | synth | not built yet |
-| 808MPC | Roland TR-808 | drum machine | not built yet |
-| 909MPC | Roland TR-909 | drum machine | not built yet |
-| QVRBGT MPC | Alesis QuadraVerb GT | effect | not built yet |
+| SHMPC | Roland SH-101 | synth | one-page skin + engine built; ARM binary compiles; **not yet tested on a Force** |
+| 808MPC | Roland TR-808 | drum machine | one-page skin + engine built; ARM binary compiles; **not tested on a Force, CPU use unmeasured (circuit solver, may be too heavy)** |
+| 909MPC | Roland TR-909 | drum machine | one-page skin + engine built; ARM binary compiles; **not tested on a Force, CPU use unmeasured (circuit solver, may be too heavy)** |
+| QVRBGT MPC | Alesis QuadraVerb GT | effect | engine + skin built; ARM binary compiles; **placeholder panel art, not tested on a Force, CPU unmeasured** |
 
 ## ROMs
 No ROMs are shipped. Put the file in the plugin's `roms` folder (it is found by its SHA-1, the name does not matter).
