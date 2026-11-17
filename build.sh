@@ -11,7 +11,7 @@ ZIG="${ZIG:-python3 -m ziglang}"
 cd "$PLUGIN"
 python3 ../tools/gen_emu.py spec.py
 [ -x prebuild.sh ] && ./prebuild.sh   # e.g. the 808/909 netlist header
-mkdir -p build/host build/arm
+mkdir -p build/host build/arm build/arm64
 [ -x build/host/shadow_art ] || gcc -O2 -w -I"$MPC_VST/tools/vendor/force-shadow/tools" -x c -o build/host/shadow_art "$MPC_VST/tools/shadow_art.c" -lm
 rm -rf build/skin
 SHADOW_ART="$PWD/build/host/shadow_art" GEN_VST_RELOCK="${GEN_VST_RELOCK:-}" python3 "$MPC_VST/tools/gen_vst.py" vst.json
@@ -24,11 +24,16 @@ SO=$(python3 -c "import json;print(json.load(open('vst.json'))['so'])")
 FOLDER="$VENDOR - VST - $NAME"
 SRCS=$(python3 -c "import json; print(' '.join(json.load(open('vst.json'))['build']['sources']))")
 CFLAGS=$(python3 -c "import json; print(' '.join(json.load(open('vst.json'))['build']['cflags']))")
-TGT="-target arm-linux-gnueabihf.2.31 -mcpu=generic+v7a+vfp3d16-d32-neon+thumb2 -ffp-contract=off"
+ARCH="${ARCH:-armv7}"   # armv7 (Gen1 MPC and Force) or aarch64 (Gen2 MPCs, 64-bit)
+if [ "$ARCH" = aarch64 ]; then
+  TGT="-target aarch64-linux-gnu.2.31 -mcpu=generic -ffp-contract=off"; ADIR=build/arm64
+else
+  TGT="-target arm-linux-gnueabihf.2.31 -mcpu=generic+v7a+vfp3d16-d32-neon+thumb2 -ffp-contract=off"; ADIR=build/arm
+fi
 COMMON="-O2 -fPIC -fvisibility=hidden -ffunction-sections -fdata-sections -DNDEBUG -w"
 OBJS=""
 for f in $SRCS; do
-  o="build/arm/$(echo "$f" | tr / _).o"
+  o="$ADIR/$(echo "$f" | tr / _).o"
   case "$f" in
     *.cpp|*.cc) (cd .. && $ZIG c++ $TGT $COMMON -std=gnu++17 -fno-rtti -I"$PLUGIN" -Icommon -I"$PLUGIN/build" -I"$MPC_VST/wrapper" $CFLAGS -c "$f" -o "$PLUGIN/$o") ;;
     *) (cd .. && $ZIG cc $TGT $COMMON -std=gnu11 -I"$PLUGIN/build" -c "$f" -o "$PLUGIN/$o") ;;
@@ -36,14 +41,14 @@ for f in $SRCS; do
   OBJS="$OBJS $o"
 done
 # defines from vst.json are in build/params.h; the wrapper is plain C
-$ZIG cc $TGT $COMMON -std=gnu11 -Ibuild -c "$MPC_VST/wrapper/vst2_wrap.c" -o build/arm/vst2_wrap.o
-printf '{\n  global: VSTPluginMain;\n  local: *;\n};\n' > build/arm/exports.map
-$ZIG c++ $TGT -shared -fPIC -Wl,--no-undefined -Wl,--version-script=build/arm/exports.map -Wl,--gc-sections -Wl,-s \
-  $OBJS build/arm/vst2_wrap.o -lm -ldl -lpthread -o "build/arm/$SO"
+$ZIG cc $TGT $COMMON -std=gnu11 -Ibuild -c "$MPC_VST/wrapper/vst2_wrap.c" -o "$ADIR/vst2_wrap.o"
+printf '{\n  global: VSTPluginMain;\n  local: *;\n};\n' > "$ADIR/exports.map"
+$ZIG c++ $TGT -shared -fPIC -Wl,--no-undefined -Wl,--version-script="$ADIR/exports.map" -Wl,--gc-sections -Wl,-s \
+  $OBJS "$ADIR/vst2_wrap.o" -lm -ldl -lpthread -o "$ADIR/$SO"
 PKG="build/package/$FOLDER"
-rm -rf build/package && mkdir -p "$PKG"
+[ "$ARCH" = armv7 ] && rm -rf build/package; mkdir -p "$PKG"
 [ -d "build/skin/$FOLDER" ] && cp -r "build/skin/$FOLDER/." "$PKG/"
-cp "build/arm/$SO" "$PKG/"
+cp "$ADIR/$SO" "$PKG/$( [ "$ARCH" = aarch64 ] && echo "${SO%.so}-aarch64.so" || echo "$SO")"
 mkdir -p "$PKG/roms"
-echo "highest glibc: $(readelf -V "build/arm/$SO" | grep -o 'GLIBC_[0-9.]*' | sort -uV | tail -1)"
+echo "highest glibc: $(readelf -V "$ADIR/$SO" | grep -o 'GLIBC_[0-9.]*' | sort -uV | tail -1)"
 echo "-> $PWD/$PKG"
