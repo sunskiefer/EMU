@@ -1,0 +1,36 @@
+{
+  "name": "303MPC",
+  "vendor": "L'Cronx",
+  "uid": "E303",
+  "version": 1000,
+  "so": "303mpc.so",
+  "params": "params.json",
+  "cc": false,
+  "nrpn": false,
+  "defines": {
+    "MODULE_SUBDIR": "\"roms\""
+  },
+  "build": {
+    "root": "..",
+    "sources": [
+      "vendor/lemus/tb303/core/machine.cpp",
+      "vendor/lemus/tb303/core/oversampler.cpp",
+      "vendor/lemus/tb303/core/ucom43.cpp",
+      "vendor/lemus/tb303/core/voice.cpp",
+      "303MPC/engine/tb303_engine.cpp"
+    ],
+    "cflags": [
+      "-Icommon",
+      "-Ivendor/lemus/tb303/core",
+      "-I303MPC",
+      "-DEMU_ONEPAGE"
+    ],
+    "libs": [
+      "-lm"
+    ]
+  },
+  "targets": [
+    "armv7"
+  ],
+  "layout": "layout.conf"
+}

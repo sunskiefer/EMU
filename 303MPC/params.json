@@ -1,0 +1,422 @@
+{
+ "name": "303MPC",
+ "params": [
+  {
+   "key": "tuning",
+   "name": "TUNING",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "cutoff",
+   "name": "CUT OFF",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "resonance",
+   "name": "RES",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "envmod",
+   "name": "ENV MOD",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "decay",
+   "name": "DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "accent",
+   "name": "ACCENT",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "tempo",
+   "name": "TEMPO",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "volume",
+   "name": "VOLUME",
+   "min": 0,
+   "max": 10,
+   "default": 7
+  },
+  {
+   "key": "track",
+   "name": "PATT GROUP",
+   "min": 0,
+   "max": 6,
+   "default": 0,
+   "display": "int"
+  },
+  {
+   "key": "mode",
+   "name": "MODE",
+   "min": 0,
+   "max": 3,
+   "default": 2,
+   "display": "int"
+  },
+  {
+   "key": "waveform",
+   "name": "WAVEFORM",
+   "options": [
+    "Saw",
+    "Square"
+   ],
+   "default": 0
+  },
+  {
+   "key": "k_c",
+   "name": "C",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_d",
+   "name": "D",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_e",
+   "name": "E",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_f",
+   "name": "F",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_g",
+   "name": "G",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_a",
+   "name": "A",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_b",
+   "name": "B",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_c2",
+   "name": "C'",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_cs",
+   "name": "C#",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_ds",
+   "name": "D#",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_fs",
+   "name": "F#",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_gs",
+   "name": "G#",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_as",
+   "name": "A#",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_down",
+   "name": "DOWN",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_up",
+   "name": "UP",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_accent",
+   "name": "ACCENT",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_slide",
+   "name": "SLIDE",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_function",
+   "name": "FUNCTION",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_pitch",
+   "name": "PITCH MODE",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_time",
+   "name": "TIME MODE",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_clear",
+   "name": "PATTERN CLEAR",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_back",
+   "name": "BACK",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "run",
+   "name": "RUN/STOP",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_tap",
+   "name": "TAP",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "brand",
+   "name": "BRAND",
+   "min": 0,
+   "max": 1,
+   "type": "readout",
+   "display": "string"
+  },
+  {
+   "key": "info",
+   "name": "INFO",
+   "min": 0,
+   "max": 1,
+   "type": "readout",
+   "display": "string"
+  },
+  {
+   "key": "status",
+   "name": "STATUS",
+   "min": 0,
+   "max": 1,
+   "type": "readout",
+   "display": "string"
+  },
+  {
+   "key": "ql1",
+   "name": "Q-Link 1",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql2",
+   "name": "Q-Link 2",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql3",
+   "name": "Q-Link 3",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql4",
+   "name": "Q-Link 4",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql5",
+   "name": "Q-Link 5",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql6",
+   "name": "Q-Link 6",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql7",
+   "name": "Q-Link 7",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql8",
+   "name": "Q-Link 8",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql9",
+   "name": "Q-Link 9",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql10",
+   "name": "Q-Link 10",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql11",
+   "name": "Q-Link 11",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql12",
+   "name": "Q-Link 12",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql13",
+   "name": "Q-Link 13",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql14",
+   "name": "Q-Link 14",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql15",
+   "name": "Q-Link 15",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql16",
+   "name": "Q-Link 16",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  }
+ ]
+}
