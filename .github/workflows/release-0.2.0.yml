@@ -1,0 +1,24 @@
+name: Release all plugins (0.2.0, pre-release)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create the five 0.2.0 pre-releases (armv7, aarch64 and sdk zips each)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          make() {   # tag, zip stem, title, notes file
+            files="builds/$2-0.2.0-mpc-armv7.zip builds/$2-0.2.0-mpc-aarch64.zip builds/$2-0.2.0-mpc-sdk.zip"
+            if gh release view "$1" >/dev/null 2>&1; then echo "$1 exists: replacing its zips"; gh release upload "$1" $files --clobber; return; fi
+            gh release create "$1" $files --target "${GITHUB_SHA}" --prerelease --title "$3" --notes-file "$4"
+          }
+          make 303mpc-v0.2.0 303MPC '303MPC 0.2.0' release-notes/303mpc-0.2.0.md
+          make shmpc-v0.2.0 SHMPC 'SHMPC 0.2.0' release-notes/shmpc-0.2.0.md
+          make 808mpc-v0.2.0 808MPC '808MPC 0.2.0' release-notes/808mpc-0.2.0.md
+          make 909mpc-v0.2.0 909MPC '909MPC 0.2.0' release-notes/909mpc-0.2.0.md
+          make qvrbgtmpc-v0.2.0 QVRBGT-MPC 'QVRBGT MPC 0.2.0' release-notes/qvrbgtmpc-0.2.0.md
