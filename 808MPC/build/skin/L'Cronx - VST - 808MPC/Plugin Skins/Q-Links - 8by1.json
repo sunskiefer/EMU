@@ -1,0 +1,53 @@
+{
+    "version": 4,
+    "info": {
+        "version": 1,
+        "type": "CompleteDescription"
+    },
+    "Screen Mode Q-Links": {
+        "version": 4,
+        "map": [
+            {
+                "Tab": 1,
+                "SubTab": 1,
+                "Bank Direction": "Column",
+                "Q-Links": {
+                    "Q-Link 1": 61,
+                    "Q-Link 2": 65,
+                    "Q-Link 3": 69,
+                    "Q-Link 4": 73,
+                    "Q-Link 5": 60,
+                    "Q-Link 6": 64,
+                    "Q-Link 7": 68,
+                    "Q-Link 8": 72,
+                    "Q-Link 9": 59,
+                    "Q-Link 10": 63,
+                    "Q-Link 11": 67,
+                    "Q-Link 12": 71,
+                    "Q-Link 13": 58,
+                    "Q-Link 14": 62,
+                    "Q-Link 15": 66,
+                    "Q-Link 16": 70
+                }
+            }
+        ]
+    },
+    "Program Mode Q-Links": {
+        "Q-Link 1": 61,
+        "Q-Link 2": 65,
+        "Q-Link 3": 69,
+        "Q-Link 4": 73,
+        "Q-Link 5": 60,
+        "Q-Link 6": 64,
+        "Q-Link 7": 68,
+        "Q-Link 8": 72,
+        "Q-Link 9": 59,
+        "Q-Link 10": 63,
+        "Q-Link 11": 67,
+        "Q-Link 12": 71,
+        "Q-Link 13": 58,
+        "Q-Link 14": 62,
+        "Q-Link 15": 66,
+        "Q-Link 16": 70
+    }
+}

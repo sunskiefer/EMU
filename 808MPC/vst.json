@@ -1,0 +1,41 @@
+{
+  "name": "808MPC",
+  "vendor": "L'Cronx",
+  "uid": "E808",
+  "version": 1000,
+  "so": "808mpc.so",
+  "params": "params.json",
+  "layout": "layout.conf",
+  "cc": false,
+  "nrpn": false,
+  "defines": {
+    "MODULE_SUBDIR": "\"roms\""
+  },
+  "build": {
+    "root": "..",
+    "sources": [
+      "vendor/lemus/tr808/core/circuit.cpp",
+      "vendor/lemus/tr808/core/oversampler.cpp",
+      "vendor/lemus/tr808/core/machine.cpp",
+      "vendor/lemus/tr808/core/factory.cpp",
+      "vendor/lemus/tr808/core/voiceboard.cpp",
+      "vendor/lemus/tr808/core/trimmers.cpp",
+      "vendor/lemus/tr808/core/ucom43.cpp",
+      "vendor/lemus/tr808/core/parallel.cpp",
+      "808MPC/engine/tr808_engine.cpp"
+    ],
+    "cflags": [
+      "-Icommon",
+      "-I808MPC/build/inc",
+      "-Ivendor/lemus/tr808/core",
+      "-I808MPC",
+      "-DEMU_ONEPAGE"
+    ],
+    "libs": [
+      "-lm"
+    ]
+  },
+  "targets": [
+    "armv7"
+  ]
+}

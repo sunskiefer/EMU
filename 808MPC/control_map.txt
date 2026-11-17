@@ -1,0 +1,59 @@
+id	type	key	label	x(layout)	y(layout)	touch box
+1	knob	ac_level	ACCENT	388	134	r=15
+2	knob	bd_level	BD LEVEL	451	134	r=15
+3	knob	bd_tone	BD TONE	452	207	r=16
+4	knob	bd_decay	BD DECAY	454	277	r=16
+5	knob	sd_level	SD LEVEL	515	134	r=15
+6	knob	sd_tone	SD TONE	516	207	r=16
+7	knob	sd_snappy	SD SNAPPY	516	278	r=16
+8	knob	lt_level	LT/LC LEVEL	579	137	r=15
+9	knob	lt_tuning	LT/LC TUNING	579	207	r=16
+10	knob	mt_level	MT/MC LEVEL	642	137	r=15
+11	knob	mt_tuning	MT/MC TUNING	642	207	r=16
+12	knob	ht_level	HT/HC LEVEL	705	137	r=15
+13	knob	ht_tuning	HT/HC TUNING	705	207	r=16
+14	knob	rs_level	RS/CL LEVEL	769	137	r=15
+15	knob	cp_level	CP/MA LEVEL	832	137	r=15
+16	knob	cb_level	CB LEVEL	896	137	r=15
+17	knob	cy_level	CY LEVEL	959	137	r=15
+18	knob	cy_tone	CY TONE	960	205	r=16
+19	knob	cy_decay	CY DECAY	960	277	r=16
+20	knob	oh_level	OH LEVEL	1023	137	r=15
+21	knob	oh_decay	OH DECAY	1023	277	r=16
+22	knob	ch_level	CH LEVEL	1086	137	r=15
+23	knob	volume	MASTER VOLUME	1077	386	r=25
+24	knob	tempo	TEMPO	216	352	r=45
+25	knob	fine	FINE	316	378	r=14
+26	knob	mode	MODE	204	165	r=24
+27	knob	instrument	INSTRUMENT	307	167	r=23
+28	knob	autofill	AUTO FILL IN	307	257	r=22
+29	toggle	lc	LOW CONGA	582	299	56x56
+30	toggle	mc	MID CONGA	642	299	56x56
+31	toggle	hc	HI CONGA	705	301	56x56
+32	toggle	cl	CLAVES	768	301	56x56
+33	toggle	ma	MARACAS	832	301	56x56
+34	toggle	ifvar	I/F VARIATION	1077	465	56x56
+35	button	variation	BASIC VARIATION	225	465	90x44
+36	button	prescale	PRE-SCALE	320	478	50x70
+37	button	k_startstop	START/STOP	225	554	100x70
+38	button	k_tap	TAP	1077	555	80x70
+39	button	k_clear	CLEAR	204	228	44x44
+40	button	k_step1	STEP 1	372	553	36x64
+41	button	k_step2	STEP 2	415	553	36x64
+42	button	k_step3	STEP 3	457	553	36x64
+43	button	k_step4	STEP 4	499	553	36x64
+44	button	k_step5	STEP 5	542	553	36x64
+45	button	k_step6	STEP 6	584	553	36x64
+46	button	k_step7	STEP 7	626	553	36x64
+47	button	k_step8	STEP 8	669	553	36x64
+48	button	k_step9	STEP 9	712	553	36x64
+49	button	k_step10	STEP 10	755	553	36x64
+50	button	k_step11	STEP 11	797	553	36x64
+51	button	k_step12	STEP 12	839	553	36x64
+52	button	k_step13	STEP 13	882	553	36x64
+53	button	k_step14	STEP 14	924	553	36x64
+54	button	k_step15	STEP 15	966	553	36x64
+55	button	k_step16	STEP 16	1009	553	36x64
+56	readout	brand		190	684	w=300 h=56
+57	readout	info		640	684	w=560 h=56
+58	readout	status		1110	684	w=340 h=56

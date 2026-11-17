@@ -1,0 +1,573 @@
+{
+ "name": "808MPC",
+ "params": [
+  {
+   "key": "ac_level",
+   "name": "ACCENT",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "bd_level",
+   "name": "BD LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "bd_tone",
+   "name": "BD TONE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "bd_decay",
+   "name": "BD DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "sd_level",
+   "name": "SD LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "sd_tone",
+   "name": "SD TONE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "sd_snappy",
+   "name": "SD SNAPPY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "lt_level",
+   "name": "LT/LC LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "lt_tuning",
+   "name": "LT/LC TUNING",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "mt_level",
+   "name": "MT/MC LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "mt_tuning",
+   "name": "MT/MC TUNING",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "ht_level",
+   "name": "HT/HC LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "ht_tuning",
+   "name": "HT/HC TUNING",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "rs_level",
+   "name": "RS/CL LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "cp_level",
+   "name": "CP/MA LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "cb_level",
+   "name": "CB LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "cy_level",
+   "name": "CY LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "cy_tone",
+   "name": "CY TONE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "cy_decay",
+   "name": "CY DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "oh_level",
+   "name": "OH LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "oh_decay",
+   "name": "OH DECAY",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "ch_level",
+   "name": "CH LEVEL",
+   "min": 0,
+   "max": 10,
+   "default": 7.5
+  },
+  {
+   "key": "volume",
+   "name": "MASTER VOLUME",
+   "min": 0,
+   "max": 10,
+   "default": 7
+  },
+  {
+   "key": "tempo",
+   "name": "TEMPO",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "fine",
+   "name": "FINE",
+   "min": 0,
+   "max": 10,
+   "default": 5
+  },
+  {
+   "key": "mode",
+   "name": "MODE",
+   "min": 0,
+   "max": 5,
+   "default": 3,
+   "display": "int"
+  },
+  {
+   "key": "instrument",
+   "name": "INSTRUMENT",
+   "min": 0,
+   "max": 11,
+   "default": 0,
+   "display": "int"
+  },
+  {
+   "key": "autofill",
+   "name": "AUTO FILL IN",
+   "min": 0,
+   "max": 5,
+   "default": 0,
+   "display": "int"
+  },
+  {
+   "key": "lc",
+   "name": "LOW CONGA",
+   "options": [
+    "TOM",
+    "CONGA"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mc",
+   "name": "MID CONGA",
+   "options": [
+    "TOM",
+    "CONGA"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hc",
+   "name": "HI CONGA",
+   "options": [
+    "TOM",
+    "CONGA"
+   ],
+   "default": 0
+  },
+  {
+   "key": "cl",
+   "name": "CLAVES",
+   "options": [
+    "RIM SHOT",
+    "CLAVES"
+   ],
+   "default": 0
+  },
+  {
+   "key": "ma",
+   "name": "MARACAS",
+   "options": [
+    "HAND CLAP",
+    "MARACAS"
+   ],
+   "default": 0
+  },
+  {
+   "key": "ifvar",
+   "name": "I/F VARIATION",
+   "options": [
+    "A",
+    "B"
+   ],
+   "default": 0
+  },
+  {
+   "key": "variation",
+   "name": "BASIC VARIATION",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "prescale",
+   "name": "PRE-SCALE",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_startstop",
+   "name": "START/STOP",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_tap",
+   "name": "TAP",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_clear",
+   "name": "CLEAR",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step1",
+   "name": "STEP 1",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step2",
+   "name": "STEP 2",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step3",
+   "name": "STEP 3",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step4",
+   "name": "STEP 4",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step5",
+   "name": "STEP 5",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step6",
+   "name": "STEP 6",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step7",
+   "name": "STEP 7",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step8",
+   "name": "STEP 8",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step9",
+   "name": "STEP 9",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step10",
+   "name": "STEP 10",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step11",
+   "name": "STEP 11",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step12",
+   "name": "STEP 12",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step13",
+   "name": "STEP 13",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step14",
+   "name": "STEP 14",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step15",
+   "name": "STEP 15",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "k_step16",
+   "name": "STEP 16",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "brand",
+   "name": "BRAND",
+   "min": 0,
+   "max": 1,
+   "type": "readout",
+   "display": "string"
+  },
+  {
+   "key": "info",
+   "name": "INFO",
+   "min": 0,
+   "max": 1,
+   "type": "readout",
+   "display": "string"
+  },
+  {
+   "key": "status",
+   "name": "STATUS",
+   "min": 0,
+   "max": 1,
+   "type": "readout",
+   "display": "string"
+  },
+  {
+   "key": "ql1",
+   "name": "Q-Link 1",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql2",
+   "name": "Q-Link 2",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql3",
+   "name": "Q-Link 3",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql4",
+   "name": "Q-Link 4",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql5",
+   "name": "Q-Link 5",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql6",
+   "name": "Q-Link 6",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql7",
+   "name": "Q-Link 7",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql8",
+   "name": "Q-Link 8",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql9",
+   "name": "Q-Link 9",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql10",
+   "name": "Q-Link 10",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql11",
+   "name": "Q-Link 11",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql12",
+   "name": "Q-Link 12",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql13",
+   "name": "Q-Link 13",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql14",
+   "name": "Q-Link 14",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql15",
+   "name": "Q-Link 15",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql16",
+   "name": "Q-Link 16",
+   "min": 0,
+   "max": 1,
+   "default": 0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  }
+ ]
+}
