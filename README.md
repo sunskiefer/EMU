@@ -6,8 +6,8 @@ ported by L'Cronx. All the emulation work is the Lemus authors'; this repo only 
 
 | Plugin | Emulates | Kind | Status |
 |---|---|---|---|
-| 303MPC | Roland TB-303 | synth | 0.2.1 pre-release, the author's own panel art; **not yet confirmed working on a Force** |
-| SHMPC | Roland SH-101 | synth | 0.2.1 pre-release, the author's own panel art; **not yet confirmed working on a Force** |
+| 303MPC | Roland TB-303 | synth | 0.2.1 pre-release, the author's own panel art; **first Force test: voice plays but with noise and CPU at 100% (cause not fixed)** |
+| SHMPC | Roland SH-101 | synth | 0.2.1 pre-release, the author's own panel art; **first Force test: voice plays but with noise and CPU at 100% (cause not fixed)** |
 | 808MPC | Roland TR-808 | drum machine | one-page skin + engine built; ARM binary compiles; **not tested on a Force, CPU use unmeasured (circuit solver, may be too heavy)** |
 | 909MPC | Roland TR-909 | drum machine | one-page skin + engine built; ARM binary compiles; **not tested on a Force, CPU use unmeasured (circuit solver, may be too heavy)** |
 | QVRBGT MPC | Alesis QuadraVerb GT | effect | engine + skin built; ARM binary compiles; **generic hardware-style panel drawn for this project, not tested on a Force, CPU unmeasured** |
