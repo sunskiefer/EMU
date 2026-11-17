@@ -2,7 +2,7 @@
 
 Version 0.1.0. An AGPL-3.0 port by L'Cronx of the emulation by lemus-dev (https://github.com/lemus-dev/lemus). Source: https://github.com/sunskiefer/EMU
 
-**Status: offline build only. It has not been tested on a Force or any MPC.** Real-time CPU use is unmeasured; the panel picture is a placeholder.
+**Status: offline build only. It has not been tested on a Force or any MPC.** Real-time CPU use is unmeasured; the panel is a generic hardware-style picture drawn for this project (no manufacturer art or logo).
 
 No ROMs are included. Bring your own.
 

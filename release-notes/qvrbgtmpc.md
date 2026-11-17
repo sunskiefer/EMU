@@ -6,4 +6,4 @@ Needs: the firmware qvgtv103.bin (64 KB). Put it in the plugin's roms folder; it
 
 Install: unzip, copy to the device, run `sh install.sh` as root (stops MPC, backs up MPC.settings, registers the plugin, restarts MPC), then add the plugin to a track. `sh uninstall.sh` removes it. The how-to is in docs/README.md inside the plugin folder.
 
-Known limits: placeholder panel art, CPU use unmeasured.
+Known limits: generic hardware-style panel (no manufacturer art), CPU use unmeasured.
