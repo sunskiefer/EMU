@@ -27,7 +27,7 @@ params = []
 for c in C:
     p = {"key": c["key"], "name": c["name"]}
     kind = c["kind"]
-    if kind in ("knob", "slider"):
+    if kind in ("knob", "slider", "slider_v", "slider_h"):
         p.update(min=c.get("min", 0), max=c.get("max", 10), default=c.get("default", 5))
     elif kind in ("enum_h", "enum_v", "toggle", "popup"):
         p.update(options=c["options"], default=c.get("default", 0))
@@ -83,11 +83,14 @@ for c in C:
     if k == "knob": parts.append("r=%d" % lr(c))
     if k == "knob" and ONE: parts += ["ns=0", "vs=0"]
     if k in ("readout", "popup", "slider_h"): parts += ["w=%d" % c.get("w", 300), "h=%d" % c.get("h", 56)]
+    if k == "slider_v":
+        sc_ = ART["scale"] if ART else 1
+        parts += ["w=%d" % round(c["w"] * sc_), "h=%d" % round(c["h"] * sc_)] + (["ns=0", "vs=0"] if ONE else [])
     if k in ("enum_h", "enum_v"):
         parts += ["sw=%d" % c.get("sw", 130), "sh=%d" % c.get("sh", 60), "rows=%d" % c.get("rows", 1)]
     parts.append('label="%s"' % c.get("label", "" if k == "readout" else c["name"]))
     parts.append("key=%s" % c["key"])
-    if k in ("knob", "toggle"): parts += ["bw=%d" % c.get("bw", 170)]
+    if k in ("knob", "toggle", "slider_v"): parts += ["bw=%d" % c.get("bw", 170)]
     if k == "toggle" and ONE: parts += ["ns=0"]
     if k == "button": parts += ["bw=%d" % c.get("bw", 130)] + (["bh=%d" % c["bh"]] if "bh" in c else [])
     if k == "readout" and c.get("tsize"): parts += ["tsize=%d" % c["tsize"], "talign=%s" % c.get("talign", "center")]
@@ -110,7 +113,8 @@ ql = [[-1] * 16 for _ in range(len(pages) + 1)]
 for c in C: c.setdefault('page', 1)
 idx = {c["key"]: i for i, c in enumerate(C)}
 for pi in range(1, len(pages) + 1):
-    keys = [c["key"] for c in C if c["page"] == pi and c.get("ql", c["kind"] in ("knob", "slider", "toggle", "enum_h", "enum_v", "popup"))]
+    keys = [c["key"] for c in C if c["page"] == pi and c.get("ql", c["kind"] in ("knob", "slider", "slider_v", "slider_h", "toggle", "enum_h", "enum_v", "popup"))]
+    keys = [c["key"] for c in sorted([c for c in C if c["page"] == pi and c["key"] in keys], key=lambda c: c.get("qlrank", 999))]
     for j, k in enumerate(keys[:16]): ql[pi][j] = idx[k]
 H.append("static const int kQl[N_PAGES + 1][16] = {" + ",".join("{" + ",".join(str(x) for x in r) + "}" for r in ql) + "};")
 H.append("// parameter ranges: kMin, kMax, kDef (options count in kMax)")

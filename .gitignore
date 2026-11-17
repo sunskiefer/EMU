@@ -1,3 +1,6 @@
 */build/host/
 */build/arm/*.o
 */build/preview/p*.png
+*/build/package/
+*/build/arm/
+*/build/*.so

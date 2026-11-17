@@ -1,0 +1,25 @@
+{
+  "name": "SHMPC",
+  "vendor": "L'Cronx",
+  "uid": "E101",
+  "version": 1000,
+  "so": "shmpc.so",
+  "params": "params.json",
+  "layout": "layout.conf",
+  "cc": false,
+  "nrpn": false,
+  "defines": { "MODULE_SUBDIR": "\"roms\"" },
+  "build": {
+    "root": "..",
+    "sources": [
+      "vendor/lemus/sh101/core/env_gen.cpp", "vendor/lemus/sh101/core/filter.cpp", "vendor/lemus/sh101/core/jack_board.cpp",
+      "vendor/lemus/sh101/core/lfo.cpp", "vendor/lemus/sh101/core/machine.cpp", "vendor/lemus/sh101/core/mcs48.cpp",
+      "vendor/lemus/sh101/core/osc.cpp", "vendor/lemus/sh101/core/osc_circuit.cpp", "vendor/lemus/sh101/core/oversampler.cpp",
+      "vendor/lemus/sh101/core/vca_ba662.cpp", "vendor/lemus/sh101/core/vcf_ir3109.cpp", "vendor/lemus/sh101/core/voice.cpp",
+      "SHMPC/engine/sh101_engine.cpp"
+    ],
+    "cflags": ["-Icommon", "-Ivendor/lemus/sh101/core", "-ISHMPC", "-DEMU_ONEPAGE"],
+    "libs": ["-lm"]
+  },
+  "targets": ["armv7"]
+}

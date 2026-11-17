@@ -1,0 +1,73 @@
+id	type	key	label	x(layout)	y(layout)	touch box
+1	knob	tune	TUNE	138	204	r=28
+2	knob	volume	VOLUME	111	423	r=29
+3	knob	portamento	PORTAMENTO	207	427	r=30
+4	knob	lfowave	LFO WAVE	267	204	r=22
+5	knob	range	RANGE	392	204	r=23
+6	slider_v	lforate	LFO RATE	206	202	40x118
+7	slider_v	vcomod	VCO MOD	333	202	40x118
+8	slider_v	pulsewidth	PULSE WIDTH	452	202	40x118
+9	slider_v	pwm	PWM SOURCE	493	202	40x92
+10	slider_v	pulselevel	PULSE	553	202	40x118
+11	slider_v	sawlevel	SAW	585	202	40x118
+12	slider_v	sublevel	SUB	617	202	40x118
+13	slider_v	submode	SUB OSC	658	200	40x97
+14	slider_v	noiselevel	NOISE	714	202	40x118
+15	slider_v	vcffreq	FREQ	767	202	40x118
+16	slider_v	vcfres	RES	799	202	40x118
+17	slider_v	vcfenv	ENV	845	202	40x118
+18	slider_v	vcfmod	MOD	878	202	40x118
+19	slider_v	vcfkybd	KYBD	910	202	40x118
+20	slider_v	vca	VCA	974	206	40x72
+21	slider_v	trigger	TRIGGER	1032	208	40x85
+22	slider_v	attack	ATTACK	1071	202	40x118
+23	slider_v	decay	DECAY	1104	202	40x118
+24	slider_v	sustain	SUSTAIN	1137	202	40x118
+25	slider_v	release	RELEASE	1168	202	40x118
+26	slider_v	bendvco	BEND VCO	95	523	40x96
+27	slider_v	bendvcf	BEND VCF	127	523	40x96
+28	slider_v	lfomod	BEND LFO	157	523	40x96
+29	button	portamode	PORTAMENTO MODE	205	500	80x30
+30	button	transpose	TRANSPOSE	209	546	80x30
+31	button	b_load	LOAD	277	289	56x60
+32	button	b_play	PLAY	313	289	56x60
+33	button	b_down	ARP DOWN	360	289	56x60
+34	button	b_ud	ARP UP/DOWN	394	289	56x60
+35	button	b_up	ARP UP	428	289	56x60
+36	button	b_hold	HOLD	476	289	56x60
+37	button	b_keytr	KEY TRANSPOSE	523	289	56x60
+38	button	key_0	KEY F	274	603	46x92
+39	button	key_2	KEY G	322	603	46x92
+40	button	key_4	KEY A	371	603	46x92
+41	button	key_6	KEY B	419	603	46x92
+42	button	key_7	KEY C	467	603	46x92
+43	button	key_9	KEY D	516	603	46x92
+44	button	key_11	KEY E	565	603	46x92
+45	button	key_12	KEY F	613	603	46x92
+46	button	key_14	KEY G	662	603	46x92
+47	button	key_16	KEY A	710	603	46x92
+48	button	key_18	KEY B	758	603	46x92
+49	button	key_19	KEY C	807	603	46x92
+50	button	key_21	KEY D	855	603	46x92
+51	button	key_23	KEY E	904	603	46x92
+52	button	key_24	KEY F	953	603	46x92
+53	button	key_26	KEY G	1001	603	46x92
+54	button	key_28	KEY A	1049	603	46x92
+55	button	key_30	KEY B	1097	603	46x92
+56	button	key_31	KEY C	1146	603	46x92
+57	button	key_1	KEY F#	298	451	30x110
+58	button	key_3	KEY G#	347	451	30x110
+59	button	key_5	KEY A#	395	451	30x110
+60	button	key_8	KEY C#	492	451	30x110
+61	button	key_10	KEY D#	540	451	30x110
+62	button	key_13	KEY F#	638	451	30x110
+63	button	key_15	KEY G#	686	451	30x110
+64	button	key_17	KEY A#	734	451	30x110
+65	button	key_20	KEY C#	831	451	30x110
+66	button	key_22	KEY D#	880	451	30x110
+67	button	key_25	KEY F#	977	451	30x110
+68	button	key_27	KEY G#	1024	451	30x110
+69	button	key_29	KEY A#	1073	451	30x110
+70	readout	brand		190	684	w=300 h=56
+71	readout	info		640	684	w=560 h=56
+72	readout	status		1110	684	w=340 h=56
