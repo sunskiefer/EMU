@@ -1,0 +1,19 @@
+{
+ "id": "303mpc",
+ "name": "303MPC",
+ "author": "L'Cronx",
+ "repo": "sunskiefer/EMU",
+ "kind": "instrument",
+ "style": "synth",
+ "tags": [
+  "303",
+  "acid",
+  "bass",
+  "emulation"
+ ],
+ "license": "AGPL-3.0-only",
+ "summary": "Roland TB-303 emulation (Lemus core, ROM bring-your-own) as a Force/MPC OS plugin with its own sequencer. Offline build only: not yet tested on a Force.",
+ "screenshot": "https://raw.githubusercontent.com/sunskiefer/EMU/303mpc-v0.1.0/docs/screens/303MPC.png",
+ "asset_pattern": "303MPC-*-mpc-armv7.zip",
+ "tier": "experimental"
+}

@@ -1,0 +1,19 @@
+{
+ "id": "qvrbgtmpc",
+ "name": "QVRBGT MPC",
+ "author": "L'Cronx",
+ "repo": "sunskiefer/EMU",
+ "kind": "effect",
+ "style": "multi-fx",
+ "tags": [
+  "reverb",
+  "delay",
+  "multi-effect",
+  "emulation"
+ ],
+ "license": "AGPL-3.0-only",
+ "summary": "Alesis QuadraVerb GT multi-effect emulation (Lemus core, ROM bring-your-own) as a Force/MPC OS effect. Offline build only: placeholder panel art, not tested on a Force.",
+ "screenshot": "https://raw.githubusercontent.com/sunskiefer/EMU/qvrbgtmpc-v0.1.0/docs/screens/QVRBGTMPC.png",
+ "asset_pattern": "QVRBGT-MPC-*-mpc-armv7.zip",
+ "tier": "experimental"
+}

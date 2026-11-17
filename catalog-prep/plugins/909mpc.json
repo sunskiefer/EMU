@@ -1,0 +1,19 @@
+{
+ "id": "909mpc",
+ "name": "909MPC",
+ "author": "L'Cronx",
+ "repo": "sunskiefer/EMU",
+ "kind": "instrument",
+ "style": "drum-machine",
+ "tags": [
+  "909",
+  "drum-machine",
+  "circuit-model",
+  "emulation"
+ ],
+ "license": "AGPL-3.0-only",
+ "summary": "Roland TR-909 emulation (Lemus circuit solver, ROMs bring-your-own) as a Force/MPC OS plugin. Offline build only: not tested on a Force, CPU use unmeasured and may be heavy.",
+ "screenshot": "https://raw.githubusercontent.com/sunskiefer/EMU/909mpc-v0.1.0/docs/screens/909MPC.png",
+ "asset_pattern": "909MPC-*-mpc-armv7.zip",
+ "tier": "experimental"
+}

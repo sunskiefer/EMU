@@ -1,0 +1,19 @@
+{
+ "id": "808mpc",
+ "name": "808MPC",
+ "author": "L'Cronx",
+ "repo": "sunskiefer/EMU",
+ "kind": "instrument",
+ "style": "drum-machine",
+ "tags": [
+  "808",
+  "drum-machine",
+  "circuit-model",
+  "emulation"
+ ],
+ "license": "AGPL-3.0-only",
+ "summary": "Roland TR-808 emulation (Lemus circuit solver, ROM bring-your-own) as a Force/MPC OS plugin. Offline build only: not tested on a Force, CPU use unmeasured and may be heavy.",
+ "screenshot": "https://raw.githubusercontent.com/sunskiefer/EMU/808mpc-v0.1.0/docs/screens/808MPC.png",
+ "asset_pattern": "808MPC-*-mpc-armv7.zip",
+ "tier": "experimental"
+}

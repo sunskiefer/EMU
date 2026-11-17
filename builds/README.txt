@@ -1,1 +1,1 @@
-Unreleased ARMv7 builds (no ROMs inside). Not tested on a Force. Not a release.
+Packaged ARMv7 release zips (install.sh, uninstall.sh, no ROMs). Version 0.1.0, offline build only, not tested on a Force. These are NOT published GitHub releases or catalog entries yet.
