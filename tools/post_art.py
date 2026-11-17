@@ -8,7 +8,8 @@
   * sh_knob_rNN   = rotating filmstrip made from that knob's own pixels in the panel image (rotated around its centre, so it
                     turns in place); sweep and the pointer's angle in the image come from the spec
   * buttons       = transparent when off, an orange highlight over the art while pressed; touch box sizes from the spec
-  * the toggle    = the same, with its touch box grown to the spec's bw/bh
+  * the toggle    = the same, with its touch box grown to the spec's bw/bh; with spec tab= the switch's own tab is lifted out of the art and the
+                    two toggle images draw it at the Saw (left) and Square (right) end
 The art itself is never redrawn: every knob frame and the background are the supplied pixels.
 """
 import json, os, re, runpy, sys
@@ -21,6 +22,8 @@ root = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 S = runpy.run_path(specp)["SPEC"]
 A = S["art"]; sc = A["scale"]
 art = np.array(Image.open(os.path.join(root, A["file"])).convert("RGBA"))
+for (ex0, ey0, ex1, ey1, edy) in A.get("erase", []):             # parts of the art the owner asked to remove: cover with the empty panel dy px lower
+    art[ey0:ey1, ex0:ex1] = art[ey0 + edy:ey1 + edy, ex0:ex1]
 ACC = (240, 122, 30)
 
 # ---- background
@@ -63,6 +66,23 @@ for c in sl:
     if donor is None: donor = top - 6
     for r in range(top, bot + 1): art_clean[r, x0:x1] = art[donor, x0:x1]
     print("post_art: cap %-12s line y=%.1f cap %dx%d donor row %d" % (c["key"], ly, cw, ch, donor))
+
+# ---- toggles with a sliding tab (spec: tab = dict(box=(x0,y0,x1,y1), donor_x, pos=(left_cx, right_cx)), image pixels): the tab is lifted out of the art,
+# its old spot is covered with an empty strip of the same panel (donor_x), and the two toggle images draw the tab at each end
+for c in S["controls"]:
+    t = c.get("tab") if c["kind"] == "toggle" else None
+    if not t: continue
+    x0, y0, x1, y1 = t["box"]; dx = t["donor_x"]
+    spr = art[y0:y1, x0:x1].astype(float)
+    don = art[y0:y1, dx:dx + (x1 - x0)].astype(float)
+    gs, gd = spr[..., :3].mean(2), np.maximum(don[..., :3].mean(2), 1.0)
+    al = np.clip(1.0 - gs / gd, 0, 1)                                   # how much darker than the empty panel = opacity of a black layer
+    al = np.where(al < 0.04, 0.0, al)
+    col = np.clip((spr[..., :3] - (1 - al[..., None]) * don[..., :3]) / np.maximum(al[..., None], 1e-3), 0, 255)
+    rgba = np.dstack([col, al * 255]).astype(np.uint8)
+    t["_rgba"] = rgba
+    art_clean[y0:y1, x0:x1] = art[y0:y1, dx:dx + (x1 - x0)]
+    print("post_art: toggle tab %-10s lifted from %s, covered with strip at x=%d" % (c["key"], t["box"], dx))
 
 # page background uses the cleaned art (replace the bg composited above)
 base2 = Image.new("RGBA", (W, H), tuple(int(th[i:i + 2], 16) for i in (0, 2, 4)) + (255,))
@@ -137,12 +157,28 @@ tui_path = os.path.join(skin, "TUI.json")
 d = json.load(open(tui_path))
 defs = d["pageData"]["componentDefinitions"]["localComponentDefinitions"]
 
-def hl(w, h, on):
+def hl(w, h, on, box=None):
     im = np.zeros((h, w, 4), np.uint8)
     if on:
-        im[..., :3] = ACC; im[..., 3] = 96
-        cv2.rectangle(im, (0, 0), (w - 1, h - 1), ACC + (255,), 3)
+        bw_, bh_ = box or (w, h)
+        x0, y0 = (w - bw_) // 2, (h - bh_) // 2
+        cv2.rectangle(im, (x0, y0), (x0 + bw_ - 1, y0 + bh_ - 1), ACC + (96,), -1)
+        cv2.rectangle(im, (x0, y0), (x0 + bw_ - 1, y0 + bh_ - 1), ACC + (255,), 2)
     return Image.fromarray(im)
+
+def tab_img(c, w, h, right):
+    """The toggle image: the lifted tab drawn at its Saw (left) or Square (right) end, rest transparent. Drawn at image scale, then shrunk."""
+    t = c["tab"]; x0, y0, x1, y1 = t["box"]; spr = t["_rgba"]
+    W, H = round(w / sc), round(h / sc)
+    ox, oy = c["x"] - W / 2.0, c["y"] - H / 2.0                          # image position of the image's top left
+    cur = (x0 + x1) / 2.0
+    tx = round(t["pos"][1 if right else 0] - cur + x0 - ox); ty = round(y0 - oy)
+    cv = np.zeros((H, W, 4), np.uint8)
+    sx0, sy0 = max(0, -tx), max(0, -ty)
+    ex, ey = min(spr.shape[1], W - tx), min(spr.shape[0], H - ty)
+    if ex > sx0 and ey > sy0: cv[ty + sy0:ty + ey, tx + sx0:tx + ex] = spr[sy0:ey, sx0:ex]
+    im = Image.fromarray(cv, "RGBA").convert("RGBa").resize((w, h), Image.LANCZOS).convert("RGBA")
+    return im
 
 newsize = {}
 keys_by_len = sorted((k for k, c in specs.items() if c["kind"] == "button"), key=len, reverse=True)
@@ -154,12 +190,12 @@ for e in defs:
         c = specs[key]; w, h = c["bw"], c["bh"]
         slug = rest[len(key) + 1:]
         for on in (0, 1):
-            hl(w, h, on).save(os.path.join(skin, "sh_btn_%s_%s_%s.png" % (key, slug, "on" if on else "off")))
+            hl(w, h, on, c.get("hl")).save(os.path.join(skin, "sh_btn_%s_%s_%s.png" % (key, slug, "on" if on else "off")))
         newsize[k] = (w, h)
     elif k.startswith("shToggle"):
         c = next(c for c in S["controls"] if c["kind"] == "toggle")
         w, h = c["bw"], c.get("bh", 56)
-        for on in (0, 1): hl(w, h, on).save(os.path.join(skin, "sh_pill_%s.png" % ("on" if on else "off")))
+        for on in (0, 1): (tab_img(c, w, h, on) if c.get("tab") else hl(w, h, on)).save(os.path.join(skin, "sh_pill_%s.png" % ("on" if on else "off")))
         newsize[k] = (w, h)
     else:
         continue

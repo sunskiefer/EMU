@@ -1,36 +1,39 @@
-id	type	key	x(layout)	y(layout)
-1	knob	tuning	391	151
-2	knob	cutoff	485	151
-3	knob	resonance	578	151
-4	knob	envmod	672	151
-5	knob	decay	765	151
-6	knob	accent	858	151
-7	knob	tempo	203	303
-8	knob	volume	1110	303
-9	knob	track	392	301
-10	knob	mode	579	301
-11	toggle	waveform	171	104
-12	button	k_c	330	546
-13	button	k_d	397	546
-14	button	k_e	466	546
-15	button	k_f	533	546
-16	button	k_g	602	546
-17	button	k_a	669	546
-18	button	k_b	738	546
-19	button	k_c2	806	546
-20	button	k_cs	363	467
-21	button	k_ds	431	467
-22	button	k_fs	567	467
-23	button	k_gs	636	467
-24	button	k_as	704	467
-25	button	k_down	878	546
-26	button	k_up	945	546
-27	button	k_accent	1014	546
-28	button	k_slide	1082	546
-29	button	k_function	205	546
-30	button	k_pitch	231	464
-31	button	k_time	1078	448
-32	button	k_clear	107	464
-33	button	k_back	1180	464
-34	button	run	107	546
-35	button	k_tap	1180	546
+id	type	key	label	x(layout)	y(layout)	touch box
+1	knob	tuning	TUNING	391	147	r=29
+2	knob	cutoff	CUT OFF	491	147	r=30
+3	knob	resonance	RES	589	147	r=31
+4	knob	envmod	ENV MOD	685	147	r=32
+5	knob	decay	DECAY	782	147	r=33
+6	knob	accent	ACCENT	879	147	r=34
+7	knob	tempo	TEMPO	189	280	r=45
+8	knob	volume	VOLUME	1114	280	r=47
+9	knob	track	PATT GROUP	389	280	r=44
+10	knob	mode	MODE	589	280	r=46
+11	toggle	waveform	WAVEFORM	156	100	96x56
+12	button	k_c	C	326	528	48x57
+13	button	k_d	D	400	528	48x57
+14	button	k_e	E	471	528	48x57
+15	button	k_f	F	541	528	48x57
+16	button	k_g	G	611	528	48x57
+17	button	k_a	A	679	526	48x58
+18	button	k_b	B	749	526	48x58
+19	button	k_c2	C'	820	527	48x58
+20	button	k_cs	C#	364	443	48x58
+21	button	k_ds	D#	436	443	48x58
+22	button	k_fs	F#	577	443	48x58
+23	button	k_gs	G#	645	442	48x60
+24	button	k_as	A#	714	440	48x59
+25	button	k_down	DOWN	892	528	48x57
+26	button	k_up	UP	960	527	48x58
+27	button	k_accent	ACCENT	1030	527	48x58
+28	button	k_slide	SLIDE	1102	528	48x57
+29	button	k_function	FUNCTION	199	526	48x64
+30	button	k_pitch	PITCH MODE	225	440	64x48
+31	button	k_time	TIME MODE	1099	424	62x48
+32	button	k_clear	PATTERN CLEAR	98	440	70x48
+33	button	k_back	BACK	1192	440	68x48
+34	button	run	RUN/STOP	99	526	96x64
+35	button	k_tap	TAP	1192	526	93x64
+36	readout	brand		190	684	w=300 h=56
+37	readout	info		640	684	w=560 h=56
+38	readout	status		1110	684	w=340 h=56
