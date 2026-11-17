@@ -20,5 +20,4 @@ jobs:
           make shmpc-v0.1.0 builds/SHMPC-0.1.0-mpc-armv7.zip 'SHMPC 0.1.0' release-notes/shmpc.md
           make 808mpc-v0.1.0 builds/808MPC-0.1.0-mpc-armv7.zip '808MPC 0.1.0' release-notes/808mpc.md
           make 909mpc-v0.1.0 builds/909MPC-0.1.0-mpc-armv7.zip '909MPC 0.1.0' release-notes/909mpc.md
-          gh release delete qvrbgtmpc-v0.1.0 --cleanup-tag --yes || true   # one-off: move this tag to the new panel commit
           make qvrbgtmpc-v0.1.0 builds/QVRBGT-MPC-0.1.0-mpc-armv7.zip 'QVRBGT MPC 0.1.0' release-notes/qvrbgtmpc.md
