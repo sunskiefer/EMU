@@ -1,0 +1,17 @@
+name: Release 303MPC 0.2.1 (pre-release)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create the 303MPC 0.2.1 pre-release (armv7, aarch64 and sdk zips)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          files="builds/303MPC-0.2.1-mpc-armv7.zip builds/303MPC-0.2.1-mpc-aarch64.zip builds/303MPC-0.2.1-mpc-sdk.zip"
+          if gh release view 303mpc-v0.2.1 >/dev/null 2>&1; then echo "303mpc-v0.2.1 exists: replacing its zips"; gh release upload 303mpc-v0.2.1 $files --clobber; exit 0; fi
+          gh release create 303mpc-v0.2.1 $files --target "${GITHUB_SHA}" --prerelease --title "303MPC 0.2.1" --notes-file release-notes/303mpc-0.2.1.md
